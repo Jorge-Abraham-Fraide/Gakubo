@@ -1,15 +1,29 @@
 /* src/styles/commonStyles.css */
 
 body {
-  background-color: #000; /* Fondo oscuro */
-  color: #fff; /* Texto claro */
+  background-image: url('image.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 20%;
+  background-color: #FFCD6D;
+  /* Fondo oscuro */
+  color: #fff;
+  /* Texto claro */
   font-family: 'Arial', sans-serif;
 }
 
 .nav-bar {
-  background: #1DA1F2; /* Azul Twitter */
-  padding: 1rem;
-  margin-bottom: 2rem; /* Separación entre el nav y el contenido */
+  display: grid;
+  place-items: center;
+  background: #FFCD6D;
+  /* Azul Twitter */
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+  padding: 0rem;
+  margin-bottom: 0rem;
+  /* Separación entre el nav y el contenido */
 }
 
 .nav-link {
@@ -19,7 +33,8 @@ body {
 }
 
 .button {
-  background-color: #1DA1F2; /* Azul Twitter */
+  background-color: #1DA1F2;
+  /* Azul Twitter */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -30,7 +45,8 @@ body {
 }
 
 .button:hover {
-  background-color: #1A91DA; /* Azul más claro */
+  background-color: #1A91DA;
+  /* Azul más claro */
 }
 
 .form-input {
@@ -52,17 +68,20 @@ table {
   margin: 20px 0;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
-  border: 1px solid #ddd; /* Un borde claro para los elementos de la tabla */
+  border: 1px solid #ddd;
+  /* Un borde claro para los elementos de la tabla */
 }
 
 th {
-  background-color: #1DA1F2; /* Azul Twitter para los encabezados */
+  background-color: #1DA1F2;
+  /* Azul Twitter para los encabezados */
   color: #fff;
 }
 
 tr:nth-child(even) {
-  background-color: #222; /* Filas alternadas con un color ligeramente más claro */
+  background-color: #222;
+  /* Filas alternadas con un color ligeramente más claro */
 }
-

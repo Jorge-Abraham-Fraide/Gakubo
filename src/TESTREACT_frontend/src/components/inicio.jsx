@@ -9,10 +9,9 @@ import '../styles/inicioStyles.css'; // Esta es la ruta relativa correcta desde 
 function Inicio() {
   return (
     <div className="main-content">
-      <img src="./PLANTEC.png" alt="Logo" className="logo" />
-      <div className="welcome-message">Bienvenidos a la Gestión de Alumnos</div>
-      <Link to="/consultar" className="nav-link"><button className="button">Consultar Alumnos</button></Link>
-      <Link to="/cargar" className="nav-link"><button className="button">Cargar Alumnos</button></Link>
+      <div className="welcome-message">Bienvenidos a Smart Honey</div>
+      <Link to="/consultar" className="nav-link"><button className="button">Consultar Datos</button></Link>
+      <Link to="/cargar" className="nav-link"><button className="button">Cargar Datos</button></Link>
     </div>
   );
 }
