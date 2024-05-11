@@ -15,9 +15,9 @@ actor {
   };
 
   public func fetchDeteccionesData() : async Text {
-    let url : Text = "https://9494-190-217-57-66.ngrok-free.app/ultimo_json"; // Update to the local API endpoint
+    let url : Text = "https://4fb7-200-68-129-124.ngrok-free.app/ultimo_json"; // Update to the local API endpoint
     let request_headers = [
-      { name = "Host"; value = "9494-190-217-57-66.ngrok-free.app" },
+      { name = "Host"; value = "4fb7-200-68-129-124.ngrok-free.app" },
       { name = "User-Agent"; value = "Motoko HTTP Agent" },
     ];
     let http_request : Types.HttpRequestArgs = {
@@ -40,11 +40,11 @@ actor {
 
   public func sendDeteccionData(deteccion : Deteccion) : async Text {
     let deteccionJson : Text = encodeDeteccionJson(deteccion);
-    let url : Text = "https://9494-190-217-57-66.ngrok-free.app/ultimo_json"; // Update to the local API endpoint
+    let url : Text = "https://4fb7-200-68-129-124.ngrok-free.app/ultimo_json"; // Update to the local API endpoint
     let bodyBytesBlob = Text.encodeUtf8(deteccionJson);
     let bodyBytes = Blob.toArray(bodyBytesBlob);
     let request_headers = [
-      { name = "Host"; value = "9494-190-217-57-66.ngrok-free.app" },
+      { name = "Host"; value = "4fb7-200-68-129-124.ngrok-free.app" },
       { name = "Content-Type"; value = "application/json" },
     ];
     let http_request : Types.HttpRequestArgs = {

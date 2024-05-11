@@ -3,28 +3,31 @@ import React, { useState, useEffect } from 'react';
 import '../styles/consultaAlumnos.css';
 
 function ConsultaAlumnos() {
-  const [alumnos, setAlumnos] = useState([]);
+  const [detecciones, setDetecciones] = useState([]);
 
   useEffect(() => {
-    const fetchAlumnosData = async () => {
+    const fetchDeteccionesData = async () => {
       try {
         const response = await TESTREACT_backend.fetchDeteccionesData();
-        // Asumiendo que la respuesta es una cadena JSON en texto, la parseamos.
         const data = JSON.parse(response);
         if (data && data.clase) {
-          setAlumnos([data.clase]); // Convertimos la propiedad "clase" en un arreglo
+          // Agregar la nueva detección al principio del arreglo
+          setDetecciones([data, ...detecciones]);
         } else {
-          // Si data.clase no existe o no es válido, muestra el contenido de data para depuración.
           console.error('El formato de los datos no es el esperado:', data);
         }
       } catch (error) {
-        // Captura cualquier error en el proceso, incluyendo errores de parseo.
-        console.error('Error al obtener los datos de los alumnos:', error.message);
+        console.error('Error al obtener los datos de la detección:', error.message);
       }
     };
 
-    fetchAlumnosData();
-  }, []);
+    // Llamar a fetchDeteccionesData al cargar la página y luego cada 10 segundos
+    fetchDeteccionesData();
+    const interval = setInterval(fetchDeteccionesData, 10000);
+
+    // Limpiar el intervalo al desmontar el componente
+    return () => clearInterval(interval);
+  }, [detecciones]); // Agregar detecciones como dependencia para que se actualice cuando cambie
 
   return (
     <div className="alumnos-table-container">
@@ -39,12 +42,12 @@ function ConsultaAlumnos() {
           </tr>
         </thead>
         <tbody>
-          {alumnos.map(alumno => (
-            <tr key={alumno.clase}>
-              <td>{alumno.clase}</td>
-              <td>{alumno.objetos_detectados}</td>
-              <td>{alumno.fecha}</td>
-              <td>{alumno.camara}</td>
+          {detecciones.map((deteccion, index) => (
+            <tr key={index}>
+              <td>{deteccion.clase}</td>
+              <td>{deteccion.objetos_detectados}</td>
+              <td>{deteccion.fecha}</td>
+              <td>{deteccion.camara}</td>
             </tr>
           ))}
         </tbody>
@@ -54,5 +57,8 @@ function ConsultaAlumnos() {
 }
 
 export default ConsultaAlumnos;
+
+
+
 
 
