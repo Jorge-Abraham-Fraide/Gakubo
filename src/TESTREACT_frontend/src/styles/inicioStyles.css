@@ -1,61 +1,55 @@
-/* src/styles/inicioStyles.css */
-
 .main-content {
-  margin-top: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 20vh;
-  /* Hace que el contenido llene al menos toda la altura de la ventana */
+  min-height: 20vh; /* Hace que el contenido llene al menos la altura mínima de la ventana */
   padding: 2rem;
-  background-color: #FFCD6D;
-  /* Fondo negro */
+  background-color: #f5f5f5; /* Fondo claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-
 .logo {
-  width: 400px;
-  /* O ajusta al tamaño que prefieras */
+  width: 300px; /* Ajusta a un tamaño adecuado */
   margin-bottom: 2rem;
 }
 
 .welcome-message {
-  color: #1DA1F2;
-  /* Azul Twitter para el mensaje de bienvenida */
+  color: #4285f4; /* Azul Google */
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .nav-link {
-  background-color: #FFCD6D;
-  /* Azul Twitter */
+  background-color: #4285f4; /* Azul Google */
   border: none;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 5px; /* Bordes menos redondeados para una apariencia profesional */
   color: #fff;
   text-decoration: none;
   margin: 10px;
   display: inline-block;
+  font-size: 1rem;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.nav-link:hover {
+  background-color: #3367d6; /* Azul ligeramente más oscuro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para resaltar el enlace */
 }
 
 .nav-link .button {
-  background: transparent;
-  /* Los botones son transparentes para heredar el fondo del enlace */
+  background: transparent; /* Los botones son transparentes para heredar el fondo del enlace */
   border: none;
   padding: 0;
   margin: 0;
   cursor: pointer;
-}
-
-.nav-link:hover {
-  /* Rectangle 6 */
-  background-color: rgba(255, 255, 255, 0.2);
-  /* Azul más claro al pasar el ratón */
-  transition: background-color 0.3s;
+  color: inherit; /* Hereda el color del enlace */
 }
 
 .nav-link:hover .button {
   background: transparent;
+  color: inherit;
 }

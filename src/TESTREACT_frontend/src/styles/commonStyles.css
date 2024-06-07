@@ -1,87 +1,81 @@
-/* src/styles/commonStyles.css */
-
 body {
-  background-image: url('image.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 20%;
-  background-color: #FFCD6D;
-  /* Fondo oscuro */
-  color: #fff;
-  /* Texto claro */
-  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5; /* Fondo gris claro */
+  color: #202124; /* Texto oscuro, típico en Google */
+  font-family: 'Roboto', sans-serif; /* Fuente similar a la de Google */
 }
 
 .nav-bar {
-  display: grid;
-  place-items: center;
-  background: #FFCD6D;
-  /* Azul Twitter */
-  padding-top: 0;
-  margin-top: 0;
-  border-top: 0;
-  padding: 0rem;
-  margin-bottom: 0rem;
-  /* Separación entre el nav y el contenido */
+  background: #4285f4; /* Azul característico de Google */
+  padding: 1rem;
+  margin-bottom: 2rem; /* Separación entre el nav y el contenido */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .nav-link {
   color: #fff;
   text-decoration: none;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 .button {
-  background-color: #1DA1F2;
-  /* Azul Twitter */
+  background-color: #34a853; /* Verde Google */
   color: #fff;
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  border-radius: 20px;
+  border-radius: 5px; /* Bordes ligeramente redondeados */
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
 }
 
 .button:hover {
-  background-color: #1A91DA;
-  /* Azul más claro */
+  background-color: #0f9d58; /* Verde oscuro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para resaltar el botón */
 }
 
 .form-input {
   padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  border: 1px solid #333;
-  background-color: #121212;
-  color: #fff;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #d1d5db; /* Borde claro y sutil */
+  background-color: #fff; /* Fondo blanco para contraste */
+  color: #202124; /* Texto oscuro */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-input::placeholder {
-  color: #bbb;
+  color: #80868b; /* Color de placeholder */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar la tabla */
 }
 
-th,
-td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  /* Un borde claro para los elementos de la tabla */
+th, td {
+  padding: 12px;
+  border: 1px solid #e0e0e0; /* Borde claro para los elementos de la tabla */
 }
 
 th {
-  background-color: #1DA1F2;
-  /* Azul Twitter para los encabezados */
-  color: #fff;
+  background-color: #4285f4; /* Azul Google */
+  color: #fff; /* Texto blanco */
+  text-align: left;
 }
 
 tr:nth-child(even) {
-  background-color: #222;
-  /* Filas alternadas con un color ligeramente más claro */
+  background-color: #f1f3f4; /* Filas alternadas con fondo claro */
+}
+
+tr:hover {
+  background-color: #e8f0fe; /* Resaltar fila con azul claro */
 }

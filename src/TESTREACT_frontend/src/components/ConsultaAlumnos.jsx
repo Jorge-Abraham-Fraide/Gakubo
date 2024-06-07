@@ -3,60 +3,64 @@ import React, { useState, useEffect } from 'react';
 import '../styles/consultaAlumnos.css';
 
 function ConsultaAlumnos() {
-  const [detecciones, setDetecciones] = useState([]);
-
-  useEffect(() => {
-    const fetchDeteccionesData = async () => {
-      try {
-        const response = await TESTREACT_backend.fetchDeteccionesData();
-        const data = JSON.parse(response);
-        if (data && data.clase) {
-          // Agregar la nueva detección al principio del arreglo
-          setDetecciones([data, ...detecciones]);
-        } else {
-          console.error('El formato de los datos no es el esperado:', data);
+    const [alumnos, setAlumnos] = useState([]);
+  
+    useEffect(() => {
+      const fetchAlumnosData = async () => {
+        try {
+          const response = await TESTREACT_backend.fetchAlumnosData();
+          // Asumiendo que la respuesta es una cadena JSON en texto, la parseamos.
+          const data = JSON.parse(response);
+          if (data && Array.isArray(data.alumnos)) {
+            setAlumnos(data.alumnos);
+          } else {
+            // Si data.alumnos no existe o no es un arreglo, muestra el contenido de data para depuración.
+            console.error('El formato de los datos no es el esperado:', data);
+          }
+        } catch (error) {
+          // Captura cualquier error en el proceso, incluyendo errores de parseo.
+          console.error('Error al obtener los datos de los alumnos:', error);
         }
-      } catch (error) {
-        console.error('Error al obtener los datos de la detección:', error.message);
-      }
-    };
-
-    // Llamar a fetchDeteccionesData al cargar la página y luego cada 10 segundos
-    fetchDeteccionesData();
-    const interval = setInterval(fetchDeteccionesData, 10000);
-
-    // Limpiar el intervalo al desmontar el componente
-    return () => clearInterval(interval);
-  }, [detecciones]); // Agregar detecciones como dependencia para que se actualice cuando cambie
-
-  return (
-    <div className="alumnos-table-container">
-      <h1 className="table-heading">Últimas detecciones en tu colmena:</h1>
-      <table className="alumnos-table">
-        <thead>
-          <tr>
-            <th>Clase</th>
-            <th>Objetos detectados</th>
-            <th>Fecha</th>
-            <th>Cámara</th>
-          </tr>
-        </thead>
-        <tbody>
-          {detecciones.map((deteccion, index) => (
-            <tr key={index}>
-              <td>{deteccion.clase}</td>
-              <td>{deteccion.objetos_detectados}</td>
-              <td>{deteccion.fecha}</td>
-              <td>{deteccion.camara}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-export default ConsultaAlumnos;
+      };
+    
+      fetchAlumnosData();
+    }, []);
+    
+  
+    return (
+        <div className="alumnos-table-container">
+          <h1 className="table-heading">Listado de Alumnos</h1>
+          <table className="alumnos-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Carrera</th>
+                <th>Semestre</th>
+                <th>Fecha de Nacimiento</th>
+              </tr>
+            </thead>
+            <tbody>
+              {alumnos.map(alumno => (
+                <tr key={alumno.id}>
+                  <td>{alumno.id}</td>
+                  <td>{alumno.nombre}</td>
+                  <td>{alumno.apellido_paterno}</td>
+                  <td>{alumno.apellido_materno}</td>
+                  <td>{alumno.carrera}</td>
+                  <td>{alumno.semestre}</td>
+                  <td>{alumno.fecha_nacimiento}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+  }
+  
+  export default ConsultaAlumnos;
 
 
 

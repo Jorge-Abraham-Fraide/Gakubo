@@ -1,5 +1,3 @@
-    // src/testreact_frontend/components/cargaAlumnos.jsx
-
 import React, { useState } from 'react';
 import { TESTREACT_backend } from 'declarations/TESTREACT_backend'; // Asegúrate de que la ruta de importación es correcta.
 import '../styles/cargaAlumnos.css'

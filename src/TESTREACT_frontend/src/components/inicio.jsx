@@ -1,5 +1,3 @@
-// src/testreact_frontend/components/Inicio.jsx
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/inicioStyles.css'; // Esta es la ruta relativa correcta desde inicio.jsx a inicioStyles.css
@@ -9,9 +7,10 @@ import '../styles/inicioStyles.css'; // Esta es la ruta relativa correcta desde 
 function Inicio() {
   return (
     <div className="main-content">
-      <div className="welcome-message">Bienvenidos a Smart Honey</div>
-      <Link to="/consultar" className="nav-link"><button className="button">Consultar Datos</button></Link>
-      <Link to="/cargar" className="nav-link"><button className="button">Cargar Datos</button></Link>
+      <img src="./PLANTEC.png" alt="Logo" className="logo" />
+      <div className="welcome-message">Bienvenidos a Gakubo, la gestión de alumnos descentralizada</div>
+      <Link to="/consultar" className="nav-link"><button className="button">Consultar Alumnos</button></Link>
+      <Link to="/cargar" className="nav-link"><button className="button">Cargar Alumnos</button></Link>
     </div>
   );
 }
