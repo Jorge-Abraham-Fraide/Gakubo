@@ -9,11 +9,11 @@ actor {
 
   public func fetchAlumnosData() : async Text {
     // Definir URL
-    let url: Text = "https://d034-2806-103e-2-6152-cd2e-d60-2c-6acf.ngrok-free.app/api/alumnos";
+    let url: Text = "https://us-east-1.aws.data.mongodb-api.com/app/application-0-oljxzmx/endpoint/api/alumnos";
 
     // Definir encabezados HTTP
     let request_headers = [
-      { name = "Host"; value = "d034-2806-103e-2-6152-cd2e-d60-2c-6acf.ngrok-free.app" },
+      { name = "Host"; value = "us-east-1.aws.data.mongodb-api.com" },
       { name = "User-Agent"; value = "Motoko HTTP Agent" },
     ];
 
@@ -49,7 +49,7 @@ actor {
     let alumnoJson: Text = encodeAlumnoJson(alumno);
 
     // URL a la que se enviarán los datos
-    let url: Text = "https://d034-2806-103e-2-6152-cd2e-d60-2c-6acf.ngrok-free.app/api/alumnos";
+    let url: Text = "https://us-east-1.aws.data.mongodb-api.com/app/application-0-oljxzmx/endpoint/api/alumnos";
 
     // Codificar el cuerpo de la solicitud en bytes
     let bodyBytesBlob = Text.encodeUtf8(alumnoJson);
@@ -57,7 +57,7 @@ actor {
 
     // Preparar los encabezados y el cuerpo de la solicitud HTTP
     let request_headers = [
-      { name = "Host"; value = "d034-2806-103e-2-6152-cd2e-d60-2c-6acf.ngrok-free.app" },
+      { name = "Host"; value = "us-east-1.aws.data.mongodb-api.com" },
       { name = "Content-Type"; value = "application/json" }
     ];
     let http_request : Types.HttpRequestArgs = {
