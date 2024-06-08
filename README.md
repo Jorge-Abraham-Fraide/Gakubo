@@ -2,8 +2,10 @@
 
 Welcome to your new Gakubo project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+Gakubo is a blockchain-based student management system that ensures the security and transparency of educational data, allowing access and traceability of information such as student names from anywhere in the world. This system centralizes data scattered across various platforms, facilitates data sharing with other institutions, and ensures the permanence of information even if the school closes​​.
 
+
+To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 To learn more before you start working with Gakubo, see the following documentation available online:
 
 - [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
